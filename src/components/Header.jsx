@@ -1,4 +1,4 @@
-// properties
+
 const Header = ({ restaurantName, menuItems }) => (
     <header>
       <div class="logo">{restaurantName}</div>

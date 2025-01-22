@@ -7,8 +7,6 @@ const FoodRecommender = () => {
     setSelectedFlavour(event.target.value);
   };
 
-  // consider how to properly model this as data (array) to be passed in
-  // model and explain in class
   return (
     <section class="food-recommender">
       <h2>What kind of food would you like to eat today?</h2>

@@ -30,7 +30,6 @@ export default function App() {
   return (
     <div className="App">
       <Header restaurantName="Your Restaurant" menuItems={menuItems} />
-      {/* have students add the banner in themselves */}
       <Banner
         title="Fast food, made fresh, right to your door"
         subtitle="Explore Our Menu"
