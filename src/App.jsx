@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Banner from "./components/Banner";
+import FoodRecommender from "./components/FoodRecommender";
+import Header from "./components/Header";
+import "./styles.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const menuItems = [
+  {
+    name: "Our Menu",
+    link: "#",
+    type: "link"
+  },
+  {
+    name: "Special Offers",
+    link: "#",
+    type: "link"
+  },
+  {
+    name: "About",
+    link: "#",
+    type: "link"
+  },
+  {
+    name: "Order",
+    link: "/order",
+    type: "button"
+  }
+];
 
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <Header restaurantName="Your Restaurant" menuItems={menuItems} />
+      {/* have students add the banner in themselves */}
+      <Banner
+        title="Fast food, made fresh, right to your door"
+        subtitle="Explore Our Menu"
+        imageURL="https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format"
+      />
+      <FoodRecommender />
+    </div>
+  );
 }
-
-export default App
