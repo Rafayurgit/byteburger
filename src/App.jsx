@@ -7,28 +7,14 @@ import Section from "./components/section";
 import Footer from "./components/Footer";
 
 
+
 const menuItems = [
-  {
-    name: "Our Menu",
-    link: "#",
-    type: "link"
-  },
-  {
-    name: "Special Offers",
-    link: "#",
-    type: "link"
-  },
-  {
-    name: "About",
-    link: "#",
-    type: "link"
-  },
-  {
-    name: "Order",
-    link: "/order",
-    type: "button"
-  }
+  { name: "Our Menu", link: "#food-recommender", type: "link" },
+  { name: "Special Offers", link: "#offers", type: "link" },
+  { name: "About", link: "#about", type: "link" },
+  { name: "Order", link: "/order", type: "button" }
 ];
+
 
 export default function App() {
   return (

@@ -1,14 +1,23 @@
+/* Header Styles */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+}
+
 header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-left: 32px;
-  padding-right: 8px;
+  padding: 0 32px;
   height: 64px;
   background-color: white;
   position: sticky;
   top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -21,7 +30,6 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   font-weight: 600;
 }
 
@@ -32,7 +40,11 @@ header {
 .menu p a {
   text-decoration: none;
   color: grey;
-  display: inline-block;
+  transition: color 150ms ease-in-out;
+}
+
+.menu p a:hover {
+  color: orange;
 }
 
 .order-button {
@@ -40,33 +52,51 @@ header {
   border-radius: 18px;
   background-color: black;
   color: orange !important;
+  text-decoration: none;
+  font-weight: bold;
 }
 
+.order-button:hover {
+  background-color: orange;
+  color: white !important;
+}
+
+/* Banner Styles */
 .banner {
+  flex: 1; /* Allow the banner to expand and fill available space */
   display: flex;
   flex-direction: row;
-  height: 400px;
-  padding-left: 32px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background-color: #f9f9f9;
 }
 
 .banner .content {
   min-width: 270px;
-  width: 100%;
-  margin-top: 80px;
-}
-
-.banner img {
-  width: 43vw;
-  object-fit: cover;
-  clip-path: polygon(13% 0, 100% 0%, 100% 100%, 0% 100%);
+  margin-top: 40px;
 }
 
 .banner h1 {
   font-size: 32px;
+  color: black;
+}
+
+.banner img {
+  width: 43vw;
+  height: 100%; /* Ensure it fills the banner height */
+  object-fit: cover;
+  clip-path: polygon(13% 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .call-to-action {
   font-weight: 700;
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .call-to-action:hover > i {
@@ -80,6 +110,20 @@ header {
   margin-left: 8px;
 }
 
-.food-recommender {
+footer {
   padding: 16px 32px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  margin-top: auto; /* Push footer to the bottom */
+}
+footer a {
+  color: orange;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
