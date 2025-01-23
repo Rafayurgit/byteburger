@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./ReviewsPage.css";
 
 export default function ReviewsPage() {
   // Predefined hardcoded reviews

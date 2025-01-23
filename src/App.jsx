@@ -6,6 +6,10 @@ import "./index.css";
 import Section from "./components/section";
 import Footer from "./components/Footer";
 
+import React from "react";
+import {BrowserRouter, Router, Routes, Route} from "react-router-dom";
+import ReviewsPage from "./pages/ReviewsPage.jsx";
+
 
 
 const menuItems = [
@@ -18,19 +22,28 @@ const menuItems = [
 
 export default function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <div className="App">
       <Header restaurantName="Byte Burger" menuItems={menuItems} />
-      <Banner
-        title="Fast food, made fresh, right to your door"
-        subtitle="Explore Our Menu"
-        imageURL="https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format"
-      />
-      <Section id="food-recommender" title="Food Recommendations">
-        <FoodRecommender />
-      </Section>
 
+      <Routes>
+        <Route path="/" element={
+          <>
+          <Banner
+          title="Fast food, made fresh, right to your door"
+          subtitle="Explore Our Menu"
+          imageURL="https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format"
+        />
+        <Section id="food-recommender" title="Food Recommendations">
+          <FoodRecommender />
+        </Section>
+          </>
+        }/>
+      </Routes>
+      <Route path="/reviews" element={<ReviewsPage/>}/>
       <Footer/>
-      
     </div>
+    </BrowserRouter>
+    
   );
 }
