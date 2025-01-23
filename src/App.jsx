@@ -3,6 +3,8 @@ import FoodRecommender from "./components/FoodRecommender";
 import Header from "./components/Header";
 import './app.css';
 import "./index.css";
+import Section from "./components/section";
+import Footer from "./components/Footer";
 
 
 const menuItems = [
@@ -37,7 +39,12 @@ export default function App() {
         subtitle="Explore Our Menu"
         imageURL="https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format"
       />
-      <FoodRecommender />
+      <Section id="food-recommender" title="Food Recommendations">
+        <FoodRecommender />
+      </Section>
+
+      <Footer/>
+      
     </div>
   );
 }
