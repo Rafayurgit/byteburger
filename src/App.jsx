@@ -1,7 +1,9 @@
 import Banner from "./components/Banner";
 import FoodRecommender from "./components/FoodRecommender";
 import Header from "./components/Header";
-import "./styles.css";
+import './app.css';
+import "./index.css";
+
 
 const menuItems = [
   {
@@ -29,7 +31,7 @@ const menuItems = [
 export default function App() {
   return (
     <div className="App">
-      <Header restaurantName="Your Restaurant" menuItems={menuItems} />
+      <Header restaurantName="Byte Burger" menuItems={menuItems} />
       <Banner
         title="Fast food, made fresh, right to your door"
         subtitle="Explore Our Menu"
