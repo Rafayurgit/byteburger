@@ -16,6 +16,7 @@ const menuItems = [
   { name: "Our Menu", link: "#food-recommender", type: "link" },
   { name: "Special Offers", link: "#offers", type: "link" },
   { name: "About", link: "#about", type: "link" },
+  { name: "Reviews", link: "/reviews", type: "link" },
   { name: "Order", link: "/order", type: "button" }
 ];
 
@@ -39,8 +40,9 @@ export default function App() {
         </Section>
           </>
         }/>
-      </Routes>
+      
       <Route path="/reviews" element={<ReviewsPage/>}/>
+      </Routes>
       <Footer/>
     </div>
     </BrowserRouter>
