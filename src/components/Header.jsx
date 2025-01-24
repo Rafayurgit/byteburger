@@ -3,16 +3,15 @@ import { Link } from "react-router-dom";
 const Header = ({ restaurantName, menuItems }) => (
   <header>
     <div className="logo">{restaurantName}</div>
+    {/* <img src="path-to-logo" alt="Byte Burger Logo" />  add logog image in future */}
+
     <nav>
       <div className="menu">
-        {menuItems?.map((menuItem, index) => (
+        {menuItems?.map((menuItem, index)=>(
           <p key={index}>
-            <a
-              className={menuItem.type === "button" ? "order-button" : ""}
-              href={menuItem.link}
-            >
-              {menuItem.name}
-            </a>
+            <Link to={menuItem.link} className={`menu-item ${menuItem.type === "button" ? "order-button" : ""}`}>
+            {menuItem.name}
+            </Link>
           </p>
         ))}
       </div>

@@ -16,7 +16,7 @@ const menuItems = [
   { name: "Our Menu", link: "#food-recommender", type: "link" },
   { name: "Special Offers", link: "#offers", type: "link" },
   { name: "About", link: "#about", type: "link" },
-  { name: "Reviews", link: "/reviews", type: "link" },
+  { name: "Reviews", link: "#reviews", type: "link" },
   { name: "Order", link: "/order", type: "button" }
 ];
 
@@ -40,7 +40,9 @@ export default function App() {
         </Section>
           </>
         }/>
-      
+      <Section id="reviews" title="What Our Customers Say">
+        <ReviewsPage/>
+      </Section>
       <Route path="/reviews" element={<ReviewsPage/>}/>
       </Routes>
       <Footer/>
