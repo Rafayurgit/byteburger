@@ -1,37 +1,36 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
 export default function ReviewsPage() {
-  // Predefined hardcoded reviews
   const hardcodedReviews = [
     {
       id: "1",
       name: "Michael Scott",
       feedback: "The world's best burger joint! That's what she said!",
-      image: "https://via.placeholder.com/150/0000FF", // Example placeholder
+      image: "https://via.placeholder.com/150/0000FF",
     },
     {
       id: "2",
       name: "Pam Beesly",
       feedback: "I loved the fries! So crispy and flavorful.",
-      image: "https://via.placeholder.com/150/FF5733", // Example placeholder
+      image: "https://via.placeholder.com/150/FF5733",
     },
     {
       id: "3",
       name: "Jim Halpert",
       feedback: "Great service and even better food! Highly recommended.",
-      image: "https://via.placeholder.com/150/28A745", // Example placeholder
+      image: "https://via.placeholder.com/150/28A745",
     },
   ];
 
-  const [reviews, setReviews] = useState(hardcodedReviews); // Initialize with hardcoded reviews
+  const [reviews, setReviews] = useState(hardcodedReviews);
   const [newReview, setNewReview] = useState({
     name: "",
     feedback: "",
     image: "",
   });
 
-  // Fetch dynamic reviews from the backend (optional, if backend is ready)
   useEffect(() => {
     fetchReviews();
   }, []);
@@ -39,7 +38,11 @@ export default function ReviewsPage() {
   const fetchReviews = async () => {
     try {
       const { data } = await axios.get("/api/reviews");
-      setReviews((prev) => [...prev, ...data]); // Merge hardcoded and dynamic reviews
+      if (Array.isArray(data)) {
+        setReviews((prev) => [...prev, ...data]);
+      } else {
+        console.error("Unexpected data format:", data);
+      }
     } catch (error) {
       console.error("Error fetching reviews:", error);
     }
@@ -65,12 +68,10 @@ export default function ReviewsPage() {
 
   const handleAddReview = async (e) => {
     e.preventDefault();
-    const newReviewWithId = { ...newReview, id: Date.now().toString() }; // Temporary ID
+    const newReviewWithId = { ...newReview, id: Date.now().toString() };
     try {
-      // If backend exists, you can post the review:
-      // const { data } = await axios.post("/api/reviews", newReview);
-      setReviews((prev) => [...prev, newReviewWithId]); // Add locally
-      setNewReview({ name: "", feedback: "", image: "" }); // Reset form
+      setReviews((prev) => [...prev, newReviewWithId]);
+      setNewReview({ name: "", feedback: "", image: "" });
     } catch (error) {
       console.error("Error adding review:", error);
     }
@@ -84,7 +85,6 @@ export default function ReviewsPage() {
     <div className="reviews-page">
       <h1>Customer Reviews</h1>
 
-      {/* Reviews Form */}
       <form className="review-form" onSubmit={handleAddReview}>
         <input
           type="text"
@@ -102,14 +102,18 @@ export default function ReviewsPage() {
           required
         />
         <input type="file" accept="image/*" onChange={handleImageChange} required />
-        <button type="submit">Add Review</button>
+        <button type="submit" disabled={!newReview.name || !newReview.feedback || !newReview.image}>
+          Add Review
+        </button>
       </form>
 
-      {/* Display Reviews */}
       <div className="reviews-container">
         {reviews.map((review) => (
           <div key={review.id} className="review-card">
-            <img src={review.image} alt={`${review.name}'s feedback`} />
+            <img
+              src={review.image || "https://via.placeholder.com/150"}
+              alt={`${review.name}'s feedback`}
+            />
             <h3>{review.name}</h3>
             <p>{review.feedback}</p>
             <button onClick={() => handleDeleteReview(review.id)}>Delete</button>

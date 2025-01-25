@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 
 const Header = ({ restaurantName, menuItems }) => (
   <header>
-    <div className="logo">{restaurantName}</div>
+    <div className="logo">
+      <Link to="/">
+      {restaurantName}
+      </Link>
+    </div>
     {/* <img src="path-to-logo" alt="Byte Burger Logo" />  add logog image in future */}
 
     <nav>
