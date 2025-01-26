@@ -2,7 +2,7 @@ import React from "react";
 import Banner from "../components/Banner";
 import FoodRecommender from "../components/FoodRecommender";
 import Section from "../components/Section";
-import ReviewsPage from "../components/ReviewsPage";
+import ReviewsPage from "../pages/ReviewsPage";
 
 const HomePage = () => (
   <div>
