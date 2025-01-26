@@ -15,7 +15,7 @@ header {
   height: 64px;
   background-color: white;
   position: sticky;
-  top: 0;
+  top: 0;`
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -156,6 +156,32 @@ header {
   cursor: pointer;
   border-radius: 4px;
 }
+
+.our-menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-item:hover {
+  background-color: #fdf6e3;
+}
+
+
+.menu-pamphlet {
+  background-color: #fef9ef;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.menu-pamphlet img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+body {
+  overflow: ${selectedImage ? "hidden" : "auto"};
+}
+
 
 
 footer {
