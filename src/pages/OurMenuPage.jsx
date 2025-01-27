@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from "../components/Modal";
 import Logo from "../assets/Logo.png";
 import miniMenu from "../assets/miniMenu.png";
 
@@ -9,7 +10,7 @@ const menuItems = [
     image: "/assets/classic-cheeseburger.jpg",
   },
   {
-    name: "Veggie Delight ",
+    name: "Veggie Delight",
     price: "75₹",
     image: "/assets/spicy-chicken-burger.jpg",
   },
@@ -37,14 +38,6 @@ const menuItems = [
 
 const OurMenuPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-
-  const openImage = (image) => {
-    setSelectedImage(image);
-  };
-
-  const closeImage = () => {
-    setSelectedImage(null);
-  };
 
   return (
     <div className="our-menu-container">
@@ -85,42 +78,32 @@ const OurMenuPage = () => {
           <img
             src={miniMenu}
             alt="Menu Pamphlet 1"
-            onClick={() => openImage(miniMenu)}
+            onClick={() => setSelectedImage(miniMenu)}
             className="w-full sm:w-1/2 md:w-1/3 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
           />
           <img
             src={Logo}
             alt="Menu Pamphlet 2"
-            onClick={() => openImage(Logo)}
+            onClick={() => setSelectedImage(Logo)}
             className="w-full sm:w-1/2 md:w-1/3 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
           />
         </div>
         <p className="text-center text-gray-600 mt-4">
-          Click on the images to view them in full-screen mode.
+          Click the menu pamphlet to enlarge and explore in detail!
         </p>
       </div>
 
-      {/* Full-Screen Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50"
-          onClick={closeImage}
-        >
-          <div className="relative">
-            <img
-              src={selectedImage}
-              alt="Selected Menu Pamphlet"
-              className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
-            />
-            <button
-              className="absolute top-4 right-4 bg-red-600 text-white p-2 rounded-full hover:bg-red-700"
-              onClick={closeImage}
-            >
-              ✖
-            </button>
-          </div>
-        </div>
-      )}
+      {/* Modal for Fullscreen View */}
+      <Modal
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+      >
+        <img
+          src={selectedImage}
+          alt="Menu Pamphlet"
+          className="w-full h-auto rounded-lg"
+        />
+      </Modal>
     </div>
   );
 };

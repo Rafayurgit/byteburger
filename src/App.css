@@ -202,3 +202,12 @@ footer a:hover {
   text-decoration: underline;
 }
 
+.modal-content img {
+  max-height: 90vh; /* Restrict modal height */
+  width: auto;
+  margin: auto;
+}
+
+body {
+  overflow: hidden; /* Disable scrolling when modal is open */
+}
