@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "../components/Modal";
 import Logo from "../assets/Logo.png";
 import miniMenu from "../assets/miniMenu.png";
@@ -39,6 +39,10 @@ const menuItems = [
 const OurMenuPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
+  useEffect(() => {
+    document.body.style.overflow = selectedImage ? "hidden" : "auto";
+  }, [selectedImage]);
+
   return (
     <div className="our-menu-container">
       {/* Menu Title Section */}
@@ -78,15 +82,23 @@ const OurMenuPage = () => {
           <img
             src={miniMenu}
             alt="Menu Pamphlet 1"
-            onClick={() => setSelectedImage(miniMenu)}
+            onClick={() => {
+              console.log("Selected Image:", miniMenu);
+              setSelectedImage(miniMenu);
+            }}
             className="w-full sm:w-1/2 md:w-1/3 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
           />
+
           <img
             src={Logo}
-            alt="Menu Pamphlet 2"
-            onClick={() => setSelectedImage(Logo)}
+            alt="Menu Pamphlet 1"
+            onClick={() => {
+              console.log("Selected Image:", Logo);
+              setSelectedImage(Logo);
+            }}
             className="w-full sm:w-1/2 md:w-1/3 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
           />
+
         </div>
         <p className="text-center text-gray-600 mt-4">
           Click the menu pamphlet to enlarge and explore in detail!
@@ -94,16 +106,16 @@ const OurMenuPage = () => {
       </div>
 
       {/* Modal for Fullscreen View */}
-      <Modal
-        isOpen={!!selectedImage}
-        onClose={() => setSelectedImage(null)}
-      >
-        <img
-          src={selectedImage}
-          alt="Menu Pamphlet"
-          className="w-full h-auto rounded-lg"
-        />
+      <Modal isOpen={!!selectedImage} onClose={() => setSelectedImage(null)}>
+        <div className="flex items-center justify-center h-full">
+          <img
+            src={selectedImage}
+            alt="Menu Pamphlet"
+            className="max-h-[90vh] w-auto rounded-lg"
+          />
+        </div>
       </Modal>
+
     </div>
   );
 };
