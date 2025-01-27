@@ -1,3 +1,5 @@
+import React from "react";
+
 const Section = ({ id, title, children }) => (
     <section id={id} className="section">
       {title && <h2>{title}</h2>}

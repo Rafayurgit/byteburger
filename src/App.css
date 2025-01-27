@@ -1,4 +1,5 @@
 /* Header Styles */
+@import "tailwindcss";
 
 .App {
   display: flex;

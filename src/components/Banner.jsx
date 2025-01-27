@@ -1,3 +1,4 @@
+import React from "react";
 
 const Banner = ({ title, subtitle, imageURL }) => (
     <section className="banner">
