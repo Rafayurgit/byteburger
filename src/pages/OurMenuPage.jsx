@@ -55,11 +55,12 @@ const OurMenuPage = () => {
       </div>
 
       {/* Dynamic Menu Grid */}
-      <div className="menu-grid flex flex-col gap-8 px-4">
+{/* Dynamic Menu Grid */}
+<div className="menu-grid flex flex-wrap justify-center gap-8 px-4">
   {menuItems.map((item, index) => (
     <div
       key={index}
-      className="menu-item flex items-center bg-gray-100 p-4 rounded-lg shadow-lg hover:scale-105 transition-transform"
+      className="menu-item flex items-center bg-gray-100 p-4 rounded-lg shadow-lg hover:scale-105 transition-transform w-full sm:w-3/4 md:w-1/2 lg:w-1/3"
     >
       {/* Image Section */}
       <img
@@ -79,6 +80,7 @@ const OurMenuPage = () => {
     </div>
   ))}
 </div>
+
 
 
       {/* Pamphlet Section */}
