@@ -7,6 +7,7 @@ import ReviewsPage from "./pages/ReviewsPage";
 import OurMenuPage from "./pages/OurMenuPage";
 import SpecialOffersPage from "./pages/SpecialOffersPage";
 import AboutPage from "./pages/AboutPage";
+import ContactUsPage from "./pages/ContactUsPage";
 import './app.css';
 import './index.css';
 
@@ -15,6 +16,7 @@ const menuItems = [
   { name: "Special Offers", link: "/specialoffers", type: "link" },
   { name: "About", link: "/about", type: "link" },
   { name: "Reviews", link: "/reviews", type: "link" },
+  {name:"contact Us", link:"/contact", type: "link"},
   { name: "Order", link: "/order", type: "button" }
 ];
 
@@ -31,6 +33,7 @@ export default function App() {
           
           <Route path="/specialoffers" element={<SpecialOffersPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contactUs" element={<ContactUsPage/>} />
         </Routes>
 
         <Footer />
