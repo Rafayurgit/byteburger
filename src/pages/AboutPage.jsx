@@ -1,6 +1,6 @@
 import React from "react";
 
-const About = () => {
+const AboutPage = () => {
   return (
     <div className="flex flex-col items-center text-center py-16 bg-gray-100">
       <h2 className="text-4xl font-bold text-gray-800 mb-6">About Byte-Burger</h2>
@@ -28,4 +28,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;
