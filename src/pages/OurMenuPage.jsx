@@ -73,7 +73,7 @@ const OurMenuPage = () => {
       <div className="ml-4">
         <h2 className="text-xl font-semibold text-gray-800">{item.name}</h2>
         <p className="text-lg text-gray-600 mt-2">{item.price}</p>
-        <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+        <button className="mt-4 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 hover:cursor-pointer transition">
           Order Now
         </button>
       </div>
