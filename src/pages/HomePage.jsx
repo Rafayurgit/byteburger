@@ -2,7 +2,7 @@ import React from "react";
 import Banner from "../components/Banner";
 import FoodRecommender from "../components/FoodRecommender";
 import Section from "../components/Section";
-import ReviewsPage from "../pages/ReviewsPage";
+import { Link } from "react-router-dom"; // Link instead of direct ReviewsPage
 
 const HomePage = () => (
   <div>
@@ -18,9 +18,10 @@ const HomePage = () => (
       <FoodRecommender />
     </Section>
 
-    {/* Reviews Section */}
+    {/* Reviews Section - Use Link Instead */}
     <Section id="reviews" title="What Our Customers Say">
-      <ReviewsPage />
+      <p>Check out what our customers say about us!</p>
+      <Link to="/reviews" className="call-to-action">Read Reviews</Link>
     </Section>
   </div>
 );

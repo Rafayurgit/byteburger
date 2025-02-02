@@ -1,6 +1,7 @@
 /* Header Styles */
 @import "tailwindcss";
 
+
 .App {
   display: flex;
   flex-direction: column;
@@ -179,11 +180,6 @@ header {
   object-fit: cover;
 }
 
-body {
-  overflow: ${selectedImage ? "hidden" : "auto"};
-}
-
-
 
 footer {
   padding: 16px 32px;
@@ -225,3 +221,4 @@ body.modal-open {
 body {
   overflow: hidden; /* Disable scrolling when modal is open */
 }
+
