@@ -1,13 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {menuItems} from "../constant/menuItems.js"
 
 const Header = ({ restaurantName, menuItems }) => (
   <header>
     <div className="logo">
-      <Link to="/">
+      <NavLink to="/">
       {restaurantName}
-      </Link>
+      </NavLink>
     </div>
     {/* <img src="path-to-logo" alt="Byte Burger Logo" />  add logog image in future */}
 
@@ -15,9 +15,12 @@ const Header = ({ restaurantName, menuItems }) => (
       <div className="menu">
         {menuItems?.map((menuItem, index)=>(
           <p key={index}>
-            <Link to={menuItem.link} className={`menu-item ${menuItem.type === "button" ? "order-button" : ""}`}>
+            <NavLink 
+            to={menuItem.link} 
+            className={({isActive})=>
+              `menu-item ${menuItem.type === "button" ? "order-button" : ""} ${isActive  ? "active-link" : ""} `}>
             {menuItem.name}
-            </Link>
+            </NavLink>
           </p>
         ))}
       </div>

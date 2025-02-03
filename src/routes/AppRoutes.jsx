@@ -11,12 +11,12 @@ import ContactUsPage from '../pages/ContactUsPage';
 const AppRoutes =() =>(
     <Routes >
 
-        <Route path='/' element={HomePage} />
-        <Route path='/ourMenu' element={OurMenuPage}/>
-        <Route path='/specialOffers' element={SpecialOffersPage}/>
-        <Route path='/about' element={AboutPage}/>
-        <Route path="/reviews" element={ReviewsPage} />
-        <Route path='/contact' element={ContactUsPage} />
+        <Route path='/' element={<HomePage/>} />
+        <Route path='/ourMenu' element={<OurMenuPage/>}/>
+        <Route path='/specialOffers' element={<SpecialOffersPage/>}/>
+        <Route path='/about' element={<AboutPage/>}/>
+        <Route path="/reviews" element={<ReviewsPage/>} />
+        <Route path='/contact' element={<ContactUsPage/>} />
 
     </Routes> 
 );
