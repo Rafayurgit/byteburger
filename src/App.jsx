@@ -7,10 +7,8 @@ import './index.css';
 
 export default function App() {
   return (
-    <BrowserRouter>
       <MainLayout>
         <AppRoutes/>
       </MainLayout>
-    </BrowserRouter>
   );
 }
