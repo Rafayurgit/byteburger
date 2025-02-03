@@ -8,17 +8,11 @@ import OurMenuPage from "./pages/OurMenuPage";
 import SpecialOffersPage from "./pages/SpecialOffersPage";
 import AboutPage from "./pages/AboutPage";
 import ContactUsPage from "./pages/ContactUsPage";
+import {menuItems} from "./constant/menuItems.js"
 import './app.css';
 import './index.css';
 
-const menuItems = [
-  { name: "Our Menu", link: "/ourmenu", type: "link" },
-  { name: "Special Offers", link: "/specialoffers", type: "link" },
-  { name: "About", link: "/about", type: "link" },
-  { name: "Reviews", link: "/reviews", type: "link" },
-  {name:"contact Us", link:"/contact", type: "link"},
-  { name: "Order", link: "/order", type: "button" }
-];
+
 
 export default function App() {
   return (
