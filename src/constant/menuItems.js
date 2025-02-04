@@ -1,5 +1,5 @@
 export const menuItems = [
-    { name: "Our Menu", link: "/ourmenu", type: "link" },
+    { name: "Our Menu", link: "/ourMenu", type: "link" },
     { name: "Special Offers", link: "/specialoffers", type: "link" },
     { name: "About", link: "/about", type: "link" },
     { name: "Reviews", link: "/reviews", type: "link" },

@@ -9,7 +9,7 @@ const MainLayout =({children}) =>{
     return(
         <div className="App">
             <Header restaurantName="Byte-Burger" menuItems={menuItems} />
-            <HomePage/>
+            {children}
             <Footer/>
         </div>
     )
