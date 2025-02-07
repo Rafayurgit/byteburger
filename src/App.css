@@ -213,6 +213,41 @@ footer a:hover {
   justify-content: center;
 }
 
+.order-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.order-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.order-option {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: black;
+  transition: transform 0.2s;
+}
+
+.order-option:hover {
+  transform: scale(1.05);
+}
+
+.order-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+
 body.modal-open {
   overflow: hidden; /* Prevent scrolling when modal is open */
 }
