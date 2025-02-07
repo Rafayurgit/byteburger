@@ -6,6 +6,7 @@ import SpecialOffersPage from '../pages/SpecialOffersPage';
 import AboutPage from '../pages/AboutPage';
 import ReviewsPage from '../pages/ReviewsPage';
 import ContactUsPage from '../pages/ContactUsPage';
+import OrderPage from '../pages/OrderPage';
 
 
 const AppRoutes =() =>(
@@ -17,6 +18,7 @@ const AppRoutes =() =>(
         <Route path='/about' element={<AboutPage/>}/>
         <Route path="/reviews" element={<ReviewsPage/>} />
         <Route path='/contact' element={<ContactUsPage/>} />
+        <Route path='/order' element={<OrderPage/>}/>
 
     </Routes> 
 );
