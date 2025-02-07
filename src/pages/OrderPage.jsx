@@ -3,8 +3,8 @@ import OrderOptions from "../components/OrderOptions";
 import Section from "../components/Section";
 
 const platforms = [
-  { name: "Zomato", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Zomato_logo.png/600px-Zomato_logo.png", link: "https://www.zomato.com/" },
-  { name: "Swiggy", logo: "https://upload.wikimedia.org/wikipedia/en/1/12/Swiggy_logo.png", link: "https://www.swiggy.com/" },
+  { name: "Zomato", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Zomato_logo.png/600px-Zomato_logo.png", link: "https://link.zomato.com/xqzv/rshare?id=979507972a1b9bf8" },
+  { name: "Swiggy", logo: "https://upload.wikimedia.org/wikipedia/en/1/12/Swiggy_logo.png", link: "https://www.swiggy.com/menu/890816?source=sharing "},
   { name: "Uber Eats", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Uber_Eats_Logo.svg/1024px-Uber_Eats_Logo.svg.png", link: "https://www.ubereats.com/" },
 ];
 
