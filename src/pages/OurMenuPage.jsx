@@ -99,15 +99,18 @@ const OurMenuPage = () => {
             className="w-full sm:w-1/2 md:w-1/3 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
           />
 
-          <img
-            src={Logo}
-            alt="Menu Pamphlet 1"
-            onClick={() => {
-              console.log("Selected Image:", Logo);
-              setSelectedImage(Logo);
-            }}
-            className="w-full sm:w-1/2 md:w-1/3 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
-          />
+          <a href="https://rafayurgit.github.io/byteBurgerMenu/" target="_blank" rel="noopener noreferrer">
+            <img
+              src={Logo}
+              alt="Menu Pamphlet 1"
+              onClick={() => {
+                console.log("Selected Image:", Logo);
+                setSelectedImage(Logo);
+              }}
+              className="w-full sm:w-1/2 md:w-1/3 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
+            />
+          </a>
+
 
         </div>
         <p className="text-center text-gray-600 mt-4">
