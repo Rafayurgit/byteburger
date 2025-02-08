@@ -247,6 +247,15 @@ footer a:hover {
   margin-right: 10px;
 }
 
+.order-image {
+  width: 100%; /* Full width */
+  max-width: 800px; /* Limit width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 30px auto; /* Center & add spacing */
+  border-radius: 12px; /* Smooth edges */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Light shadow */
+}
 
 body.modal-open {
   overflow: hidden; /* Prevent scrolling when modal is open */
