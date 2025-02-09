@@ -32,6 +32,10 @@ const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
+    window.scrollTo(0, 0); // Fix scrolling issue
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 4000); // Auto slide every 4 seconds
@@ -94,5 +98,6 @@ const HomePage = () => {
     </div>
   );
 };
+
 
 export default HomePage;
