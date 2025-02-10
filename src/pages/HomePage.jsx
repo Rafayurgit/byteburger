@@ -72,24 +72,29 @@ const HomePage = () => {
       <Section id="featured-menu" title="Featured Menu">
         <FoodRecommender />
         <Link to="/ourMenu" className="call-to-action mt-4">View Full Menu</Link>
+        <img className=""
+        src="https://images.unsplash.com/photo-1594179047519-f347310d3322?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmFzdCUyMGZvb2R8ZW58MHx8MHx8fDA%3D" alt="" />
       </Section>
 
       {/* Special Offers */}
       <Section id="special-offers" title="Today's Special Deals">
         <p className="text-lg">Get the best deals on our signature meals!</p>
         <Link to="/specialoffers" className="call-to-action mt-4">Check Offers</Link>
+        <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhZmUlMjBpbm9ncmF0aW9ufGVufDB8fDB8fHww" alt="" />
       </Section>
 
       {/* Customer Reviews */}
       <Section id="reviews" title="What Our Customers Say">
         <p className="text-lg">See why our customers love us!</p>
         <Link to="/reviews" className="call-to-action mt-4">Read Reviews</Link>
+        <img src="https://plus.unsplash.com/premium_photo-1682309650634-363db7521e6d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y3VzdG9tZXIlMjByZXZpZXdzfGVufDB8fDB8fHww" alt="" />
       </Section>
 
       {/* Call to Action */}
       <Section id="order-now" title="Ready to Order?">
         <p className="text-lg">Fast delivery & fresh ingredients at your doorstep.</p>
         <Link to="/order" className="call-to-action mt-4">Order Now</Link>
+        <img src="https://plus.unsplash.com/premium_photo-1683141096869-b21fb229dd02?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cXVldWV8ZW58MHx8MHx8fDA%3D" alt="" />
       </Section>
     </div>
   );
