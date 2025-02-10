@@ -32,10 +32,6 @@ const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Fix scrolling issue
-  }, []);
-
-  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 4000); // Auto slide every 4 seconds
@@ -44,25 +40,25 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-full overflow-hidden">
       {/* Sliding Hero Section */}
-      <div className="relative w-full h-[60vh] overflow-hidden">
+      <div className="relative w-full h-[70vh] overflow-hidden">
         <AnimatePresence>
           {slides.map((slide, index) =>
             index === currentSlide ? (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.8 }}
-                className="absolute w-full h-full flex flex-col justify-center items-center text-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${slide.imageURL})` }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                transition={{ duration: 1 }}
+                className="absolute w-full h-full flex flex-col justify-center items-center text-center bg-cover bg-center p-6"
+                style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${slide.imageURL})` }}
               >
-                <div className="bg-black bg-opacity-50 p-6 rounded-lg">
-                  <h1 className="text-white text-4xl font-bold">{slide.title}</h1>
-                  <p className="text-white text-lg mt-2">{slide.subtitle}</p>
-                  <Link to={slide.link} className="mt-4 bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-lg shadow-lg transition">
+                <div className="bg-black bg-opacity-60 p-6 rounded-lg max-w-md">
+                  <h1 className="text-white text-4xl font-bold leading-tight">{slide.title}</h1>
+                  <p className="text-white text-lg mt-3">{slide.subtitle}</p>
+                  <Link to={slide.link} className="mt-5 inline-block bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-lg shadow-lg transition font-semibold">
                     {slide.buttonText}
                   </Link>
                 </div>
@@ -75,29 +71,28 @@ const HomePage = () => {
       {/* Featured Menu */}
       <Section id="featured-menu" title="Featured Menu">
         <FoodRecommender />
-        <Link to="/ourMenu" className="call-to-action">View Full Menu</Link>
+        <Link to="/ourMenu" className="call-to-action mt-4">View Full Menu</Link>
       </Section>
 
       {/* Special Offers */}
       <Section id="special-offers" title="Today's Special Deals">
-        <p>Get the best deals on our signature meals!</p>
-        <Link to="/specialoffers" className="call-to-action">Check Offers</Link>
+        <p className="text-lg">Get the best deals on our signature meals!</p>
+        <Link to="/specialoffers" className="call-to-action mt-4">Check Offers</Link>
       </Section>
 
       {/* Customer Reviews */}
       <Section id="reviews" title="What Our Customers Say">
-        <p>See why our customers love us!</p>
-        <Link to="/reviews" className="call-to-action">Read Reviews</Link>
+        <p className="text-lg">See why our customers love us!</p>
+        <Link to="/reviews" className="call-to-action mt-4">Read Reviews</Link>
       </Section>
 
       {/* Call to Action */}
       <Section id="order-now" title="Ready to Order?">
-        <p>Fast delivery & fresh ingredients at your doorstep.</p>
-        <Link to="/order" className="call-to-action">Order Now</Link>
+        <p className="text-lg">Fast delivery & fresh ingredients at your doorstep.</p>
+        <Link to="/order" className="call-to-action mt-4">Order Now</Link>
       </Section>
     </div>
   );
 };
-
 
 export default HomePage;
