@@ -181,13 +181,17 @@ header {
 }
 
 
+
+
 footer {
+  
   padding: 16px 32px;
   background-color: #333;
   color: white;
   text-align: center;
   margin-top: auto; /* Push footer to the bottom */
 }
+
 footer a {
   color: orange;
   margin: 0 8px;

@@ -69,12 +69,12 @@ const HomePage = () => {
       </div>
 
       {/* Featured Menu */}
-      <Section id="featured-menu" title="Featured Menu">
+      {/* <Section id="featured-menu" title="Featured Menu">
         <FoodRecommender />
         <Link to="/ourMenu" className="call-to-action mt-4">View Full Menu</Link>
         <img className=""
         src="https://images.unsplash.com/photo-1594179047519-f347310d3322?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmFzdCUyMGZvb2R8ZW58MHx8MHx8fDA%3D" alt="" />
-      </Section>
+      </Section> */}
 
       {/* Special Offers */}
       <Section id="special-offers" title="Today's Special Deals">
