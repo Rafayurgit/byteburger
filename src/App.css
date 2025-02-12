@@ -15,7 +15,8 @@ header {
   justify-content: space-between;
   padding: 0 32px;
   height: 64px;
-  background-color: white;
+  background-color: #333;
+  color: white;
   position: sticky;
   top: 0;`
   z-index: 1000;
@@ -41,12 +42,14 @@ header {
 
 .menu p a {
   text-decoration: none;
-  color: grey;
+  color: white;
   transition: color 150ms ease-in-out;
 }
 
-.menu p a:hover {
-  color: orange;
+.menu p a:hover,
+.menu p a.active-link {
+  color: orange; /* Highlight active page */
+  text-decoration: underline;
 }
 
 .order-button {
