@@ -1,7 +1,6 @@
 /* Header Styles */
 @import "tailwindcss";
 
-
 .App {
   display: flex;
   flex-direction: column;
@@ -50,6 +49,7 @@ header {
 .menu p a.active-link {
   color: orange; /* Highlight active page */
   text-decoration: underline;
+  background-color: transparent;
 }
 
 .order-button {
@@ -63,7 +63,7 @@ header {
 
 .order-button:hover {
   background-color: orange;
-  color: #333 !important;
+  color: white !important;
 }
 
 /* Banner Styles */
