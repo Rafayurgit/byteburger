@@ -24,19 +24,19 @@ const ContactUsPage = () => {
     <div className="flex flex-col items-center justify-center min-h-screen p-6 sm:p-12">
       {/* Contact Section */}
       <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">Contact Us</h1>
-      <p className="text-lg text-gray-600 mb-8 text-center text-shadow-lg">
+      <p className="text-lg text-gray-600 mb-8 text-center text-shadow-lg p-3 text-shadow-xxl">
         Stay connected with us on social media!
       </p>
 
       {/* Social Media Links */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full max-w-2xl backdrop-blur-lg">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full max-w-2xl ">
         {contacts.map((contact, index) => (
           <a
             key={index}
             href={contact.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center  p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
+            className="flex flex-col items-center  p-6 rounded-lg shadow-lg backdrop-blur-lg hover:scale-105 transition-transform"
           >
             <div className="text-orange-500 text-4xl">{contact.icon}</div>
             <p className="text-gray-800 font-semibold mt-2">{contact.name}</p>
