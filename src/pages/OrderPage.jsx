@@ -10,12 +10,12 @@ const platforms = [
 ];
 
 const OrderPage = () => (
-  <div className="order-page">
+  <div className="order-page p-3">
     <h1>Order Your Byte-Burger</h1>
     
     {/* Order via Delivery Platforms */}
-    <Section id="order-platforms" title="Order via Platforms">
-      <div className="order-options">
+    <Section className=" " id="order-platforms" title="Order via Platforms ">
+      <div className="order-options p-4">
         {platforms.map((platform, index) => (
           <OrderOptions key={index} {...platform} />
         ))}
@@ -24,8 +24,7 @@ const OrderPage = () => (
 
     {/* Direct Order Option */}
     <Section id="direct-order" title="Order Directly from Us">
-      <p>Want fresh burgers directly from us? Click below!</p>
-      <a href="/direct-order" className="call-to-action">Order Now</a>
+      <p className="p-3 text-shadow-md">Want fresh burgers directly from us? Click below!</p>
     </Section>
 
     <Section>

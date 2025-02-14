@@ -21,22 +21,22 @@ const ContactUsPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6 sm:p-12">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 sm:p-12">
       {/* Contact Section */}
       <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">Contact Us</h1>
-      <p className="text-lg text-gray-600 mb-8 text-center">
+      <p className="text-lg text-gray-600 mb-8 text-center text-shadow-lg">
         Stay connected with us on social media!
       </p>
 
       {/* Social Media Links */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full max-w-2xl">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full max-w-2xl backdrop-blur-lg">
         {contacts.map((contact, index) => (
           <a
             key={index}
             href={contact.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
+            className="flex flex-col items-center  p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
           >
             <div className="text-orange-500 text-4xl">{contact.icon}</div>
             <p className="text-gray-800 font-semibold mt-2">{contact.name}</p>
@@ -45,7 +45,7 @@ const ContactUsPage = () => {
       </div>
 
       {/* Contact Form */}
-      <div className="w-full max-w-lg mt-10 bg-white p-8 rounded-lg shadow-lg">
+      <div className="w-full max-w-lg mt-10 p-8 rounded-lg shadow-lg backdrop-blur-lg">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Send us a message</h2>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <input

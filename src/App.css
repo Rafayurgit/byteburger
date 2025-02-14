@@ -14,7 +14,7 @@ header {
   justify-content: space-between;
   padding: 0 32px;
   height: 64px;
-  background-color: #333;
+  background-color: black;
   color: white;
   position: sticky;
   top: 0;`
@@ -52,19 +52,7 @@ header {
   background-color: transparent;
 }
 
-.order-button {
-  padding: 8px 24px;
-  border-radius: 18px;
-  background-color: black;
-  color: orange !important;
-  text-decoration: none;
-  font-weight: bold;
-}
 
-.order-button:hover {
-  background-color: orange;
-  color: white !important;
-}
 
 /* Banner Styles */
 .banner {
@@ -168,12 +156,12 @@ header {
 }
 
 .menu-item:hover {
-  background-color: #fdf6e3;
+  background-color: black;
 }
 
 
 .menu-pamphlet {
-  background-color: #fef9ef;
+  backdrop-blur-lg
   padding: 2rem;
   border-radius: 1rem;
 }
@@ -189,7 +177,7 @@ header {
 footer {
   
   padding: 16px 32px;
-  background-color: #333;
+  background-color: black;
   color: white;
   text-align: center;
   margin-top: auto; /* Push footer to the bottom */
@@ -264,6 +252,20 @@ footer a:hover {
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Light shadow */
 }
 
+.order-button {
+  padding: 8px 24px;
+  border-radius: 18px;
+  background-color: white;
+  color: orange !important;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.order-button:hover {
+  background-color: orange;
+  color: white !important;
+}
+
 body.modal-open {
   overflow: hidden; /* Prevent scrolling when modal is open */
 }
@@ -279,6 +281,14 @@ body {
 
 .text-shadow-md {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-xxl{
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.text-shadow-spred{
+  text-shadow: 2px 2px 5px rgba(0.5, 0.5, 0.5, 0.5);
 }
 
 /*

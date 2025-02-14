@@ -48,8 +48,8 @@ const OurMenuPage = () => {
     <div className="our-menu-container">
       {/* Menu Title Section */}
       <div className="text-center my-8">
-        <h1 className="text-4xl font-bold text-gray-800">Our Menu</h1>
-        <p className="text-lg text-gray-600 mt-2">
+        <h1 className="text-4xl font-bold text-gray-800 text-shadow-md ">Our Menu</h1>
+        <p className="text-lg text-white mt-2 text-shadow-lg">
           Explore our delicious range of burgers, beverages, and sides!
         </p>
       </div>
@@ -60,7 +60,7 @@ const OurMenuPage = () => {
   {menuItems.map((item, index) => (
     <div
       key={index}
-      className="menu-item flex items-center bg-gray-100 p-4 rounded-lg shadow-lg hover:scale-105 transition-transform w-full sm:w-3/4 md:w-1/2 lg:w-1/3"
+      className="menu-item flex items-center backdrop-blur-lg p-4 rounded-lg shadow-lg hover:scale-105 transition-transform w-full sm:w-3/4 md:w-1/2 lg:w-1/3"
     >
       {/* Image Section */}
       <img
@@ -72,7 +72,7 @@ const OurMenuPage = () => {
       {/* Text Section */}
       <div className="ml-4">
         <h2 className="text-xl font-semibold text-gray-800">{item.name}</h2>
-        <p className="text-lg text-gray-600 mt-2">{item.price}</p>
+        <p className="text-lg text-white mt-2">{item.price}</p>
         <button className="mt-4 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 hover:cursor-pointer transition">
           Order Now
         </button>
@@ -84,8 +84,8 @@ const OurMenuPage = () => {
 
 
       {/* Pamphlet Section */}
-      <div className="menu-pamphlet my-12">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
+      <div className="menu-pamphlet my-12 backdrop-blur-lg text-shadow-lg ">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4 p-4">
           View Our Full Menu
         </h2>
         <div className="pamphlet-images flex flex-wrap justify-center gap-6">
@@ -113,7 +113,7 @@ const OurMenuPage = () => {
 
 
         </div>
-        <p className="text-center text-gray-600 mt-4">
+        <p className="text-center text-gray-800 mt-4 p-4 text-shadow-lg">
           Click the menu pamphlet to enlarge and explore in detail!
         </p>
       </div>
