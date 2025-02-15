@@ -77,7 +77,7 @@ const HomePage = () => {
       </Section> */}
 
       {/* Special Offers */}
-      <Section className="p-3 top-margin-3" id="special-offers" title="Today's Special Deals">
+      <Section className="p-3 mt-3 " id="special-offers" title="Today's Special Deals">
         <p className="text-lg">Get the best deals on our signature meals!</p>
         <Link to="/specialoffers" className="call-to-action mt-4">Check Offers</Link>
         <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhZmUlMjBpbm9ncmF0aW9ufGVufDB8fDB8fHww" alt="" />

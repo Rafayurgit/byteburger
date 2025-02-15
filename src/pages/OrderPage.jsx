@@ -10,14 +10,14 @@ const platforms = [
 ];
 
 const OrderPage = () => (
-  <div className="order-page p-3">
+  <div className="order-page text-orange-300 text-shadow-spred">
     <h1>Order Your Byte-Burger</h1>
     
     {/* Order via Delivery Platforms */}
-    <Section className=" " id="order-platforms" title="Order via Platforms ">
-      <div className="order-options p-4">
+    <Section className=" text-orange-400 " id="order-platforms" title="Order via Platforms ">
+      <div className="order-options p-4  bg-transparent ">
         {platforms.map((platform, index) => (
-          <OrderOptions key={index} {...platform} />
+          <OrderOptions className="" key={index} {...platform} />
         ))}
       </div>
     </Section>
