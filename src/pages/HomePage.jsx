@@ -48,11 +48,11 @@ const HomePage = () => {
             index === currentSlide ? (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.05 }}
-                transition={{ duration: 1 }}
-                className="absolute w-full h-full flex flex-col justify-center items-center text-center bg-cover bg-center p-6"
+                initial={{ opacity: 0, clipPath: "circle(0% at 50% 50%)" }}
+                animate={{ opacity: 1, clipPath: "circle(100% at 50% 50%)" }}
+                exit={{ opacity: 0, clipPath: "circle(0% at 50% 50%)" }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                className="absolute w-full h-full flex flex-col justify-center items-center text-center bg-cover bg-center p-6 z-10"
                 style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${slide.imageURL})` }}
               >
                 <div className="bg-black bg-opacity-60 p-6 rounded-lg max-w-md">
@@ -77,7 +77,7 @@ const HomePage = () => {
       </Section> */}
 
       {/* Special Offers */}
-      <Section id="special-offers" title="Today's Special Deals">
+      <Section className="p-3 top-margin-3" id="special-offers" title="Today's Special Deals">
         <p className="text-lg">Get the best deals on our signature meals!</p>
         <Link to="/specialoffers" className="call-to-action mt-4">Check Offers</Link>
         <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhZmUlMjBpbm9ncmF0aW9ufGVufDB8fDB8fHww" alt="" />
