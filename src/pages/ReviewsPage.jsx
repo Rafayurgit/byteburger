@@ -85,7 +85,7 @@ export default function ReviewsPage() {
     <div className="reviews-page">
       <h1>Customer Reviews</h1>
 
-      <form className="review-form" onSubmit={handleAddReview}>
+      <form className=" review-form" onSubmit={handleAddReview}>
         <input
           type="text"
           name="name"
