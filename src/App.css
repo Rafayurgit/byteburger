@@ -1,6 +1,12 @@
 /* Header Styles */
 @import "tailwindcss";
 
+@keyframes infiniteScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
 body.modal-open {
   overflow: hidden; /* Prevent scrolling when modal is open */
 }
@@ -386,6 +392,27 @@ footer a:hover {
 
 .text-shadow-spred{
   text-shadow: 2px 2px 5px rgba(0.5, 0.5, 0.5, 0.5);
+}
+
+.scroll-strip-container {
+  width: 100vw; /* Full width */
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background: black; /* Optional, adjust as needed */
+}
+
+.scroll-strip {
+  display: flex;
+  gap: 20px;
+  animation: infiniteScroll 20s linear infinite;
+}
+
+.scroll-strip img {
+  height: 150px; /* Adjust as needed */
+  width: auto;
+  object-fit: cover;
+  display: inline-block;
 }
 
 /*

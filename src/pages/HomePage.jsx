@@ -40,9 +40,9 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full min-h-screen flex flex-col justify-between">
       {/* Sliding Hero Section */}
-      <div className="relative w-full h-[70vh] overflow-hidden">
+      <div className="relative w-full h-[70vh] overflow-hidden ">
         <AnimatePresence>
           {slides.map((slide, index) =>
             index === currentSlide ? (
@@ -67,6 +67,18 @@ const HomePage = () => {
           )}
         </AnimatePresence>
       </div>
+
+            {/* Motion Scrolling Strip - Full Width & Continuous Loop */}
+            <div className="scroll-strip-container">
+  <div className="scroll-strip">
+    {[...Array(10)].map((_, i) => (
+      <img key={i} src={`https://source.unsplash.com/200x150/?burger,food&sig=${i}`} alt="Food Item" />
+    ))}
+  </div>
+</div>
+
+
+
 
       {/* Featured Menu */}
       {/* <Section id="featured-menu" title="Featured Menu">
