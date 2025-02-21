@@ -69,7 +69,7 @@ const HomePage = () => {
       </div>
 
             {/* Motion Scrolling Strip - Full Width & Continuous Loop */}
-            <div className="scroll-strip-container">
+            <div className="scroll-strip-container mt-7">
   <div className="scroll-strip">
     {[...Array(10)].map((_, i) => (
       <img key={i} src={`https://source.unsplash.com/200x150/?burger,food&sig=${i}`} alt="Food Item" />
