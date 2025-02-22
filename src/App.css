@@ -2,10 +2,9 @@
 @import "tailwindcss";
 
 @keyframes infiniteScroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* Move half the width */
 }
-
 
 body.modal-open {
   overflow: hidden; /* Prevent scrolling when modal is open */
@@ -395,26 +394,26 @@ footer a:hover {
 }
 
 .scroll-strip-container {
-  width: 100vw; /* Full width */
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  background: black; /* Optional, adjust as needed */
+  width: 100%;
+  background: black;
 }
 
 .scroll-strip {
   display: flex;
-  gap: 20px;
-  animation: infiniteScroll 20s linear infinite;
+  gap:7rem;
+  
+  width: 200%; /* Twice the size for seamless loop */
+  animation: infiniteScroll 10s linear infinite;
 }
 
-.scroll-strip img {
-  height: 150px; /* Adjust as needed */
-  width: auto;
+.scroll-image {
+  width: 200px;
+  height: 150px;
   object-fit: cover;
-  display: inline-block;
 }
-
 /*
 body {
   overflow: hidden; 
