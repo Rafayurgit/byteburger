@@ -46,7 +46,7 @@ const HomePage = () => {
   return (
     <div className="w-full min-h-screen flex flex-col justify-between">
       {/* Sliding Hero Section */}
-      <div className="relative w-full h-[70vh] overflow-hidden ">
+      <div className="relative w-full h-[70vh] overflow-hidden mt-3 ">
         <AnimatePresence>
           {slides.map((slide, index) =>
             index === currentSlide ? (
@@ -80,7 +80,7 @@ const HomePage = () => {
       </div>
 
       {/* Motion Scrolling Strip - Full Width & Continuous Loop */}
-      <div className="scroll-strip-container mt-7">
+      <div className="scroll-strip-container mt-3">
         <div className="scroll-strip">
           {[...slides, ...slides].map(
             (

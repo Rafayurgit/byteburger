@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+/* =================== Global Styles =================== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  scrollbar-gutter: auto; /* Prevents unnecessary space */
+}
+
+body {
+  overflow-y: auto;
+  position: relative;
+}
+
+::selection {
+  background: orange;
+  color: black;
+}
+
+/* =================== Custom Scrollbar =================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 50px;
+  background: black;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, black, orange);
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, orange, black);
+}
+
+/* =================== App Layout =================== */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* =================== Header Styles =================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 64px;
+  background-color: black;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 18px;
+  color: orange;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.menu p {
+  margin-right: 24px;
+}
+
+.menu p a {
+  text-decoration: none;
+  color: white;
+  transition: color 150ms ease-in-out;
+}
+
+.menu p a:hover,
+.menu p a.active-link {
+  color: orange;
+  text-decoration: underline;
+}
+
+/* =================== Banner Section =================== */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background-color: #f9f9f9;
+  flex: 1;
+}
+
+.banner .content {
+  min-width: 270px;
+  margin-top: 40px;
+}
+
+.banner h1 {
+  font-size: 32px;
+  color: black;
+}
+
+.banner img {
+  width: 43vw;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.call-to-action {
+  font-weight: 700;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.call-to-action:hover > i {
+  transform: translateX(6px);
+}
+
+.call-to-action i {
+  transition: transform 150ms ease-in-out;
+  color: orange;
+  font-size: 18px;
+  margin-left: 8px;
+}
+
+/* =================== Reviews Page =================== */
+.reviews-page {
+  text-align: center;
+  padding: 40px 20px;
+  color: white;
+}
+
+.review-form {
+  width: 320px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.review-form button {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.review-form button:hover {
+  background-color: #e67e22;
+}
+
+/* =================== Footer =================== */
+footer {
+  padding: 16px 32px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer a {
+  color: orange;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* =================== Modal =================== */
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content img {
+  max-height: 90vh;
+  max-width: 100%;
+  object-fit: contain;
+  margin: auto;
+}
+
+/* =================== Scroll Strip Animation =================== */
+@keyframes infiniteScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.scroll-strip-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  background: black;
+}
+
+.scroll-strip {
+  display: flex;
+  gap: 7rem;
+  width: 200%;
+  animation: infiniteScroll 10s linear infinite;
+}
+
+.scroll-image {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
