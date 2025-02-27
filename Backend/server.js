@@ -18,9 +18,9 @@ app.use(cors());
 // .catch((error)=>console.log("MongoDb connection Error", error));
 
 
-app.get("/", (req, res)=>{
-    res.send("Welcome to byteBurger api");
-});
+// app.get("/", (req, res)=>{
+//     res.send("Welcome to byteBurger api");
+// });
 
 const PORT = 8080 || process.env.PORT;
 
