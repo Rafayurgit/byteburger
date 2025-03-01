@@ -1,11 +1,11 @@
 import express, { json } from "express";
-import menuItem from "../models/menuItem";
+import MenuItem from "../models/menuItem";
 
 const router = express.Router();
 
 router.get("/", async(req,res)=>{
     try {
-        const items= await menuItem.find();
+        const items= await MenuItem.find();
         res.json(items);
 
     } catch (error) {
@@ -16,7 +16,7 @@ router.get("/", async(req,res)=>{
 //create a new item 
 router.post("/", async(req,res)=>{
     try {
-        const newItem = menuItem(req.body);
+        const newItem = MenuItem(req.body);
         await newItem.save();
         res.status(201).json({newItem})
     } catch (error) {
@@ -26,7 +26,7 @@ router.post("/", async(req,res)=>{
 
 router.get("/:id", async(req,res)=>{
     try {
-        const item= await menuItem.findById(req.params.id);
+        const item= await MenuItem.findById(req.params.id);
         if(!item) return res.status(404).json({message: "Item not found"})
         res.json(item);
     } catch (error) {
@@ -36,7 +36,7 @@ router.get("/:id", async(req,res)=>{
 
 router.put("/:id", async(req,res)=>{
     try {
-        const updateItem= await menuItem.findByIdAndUpdate(req.params.id, req.body, {new:true});
+        const updateItem= await MenuItem.findByIdAndUpdate(req.params.id, req.body, {new:true});
         if(!updateItem) return res.status(404).json({message: "Item not found"})
         res.json(updateItem);
 
@@ -44,3 +44,15 @@ router.put("/:id", async(req,res)=>{
         res.status(500),json({message: error.message})
     }
 })
+
+router.delete("/:id", async(req,res)=>{
+    try {
+        const deleteItem= await MenuItem.findByIdAndDelete( req.params.id);
+        if(!deleteItem) return res.status(404).json({messag: "Item not found"})
+        res.json({messag:"Item deleted successfully"});
+    } catch (error) {
+        res.status(500).json({messag: error.messag})
+    }
+})
+
+export default router;
