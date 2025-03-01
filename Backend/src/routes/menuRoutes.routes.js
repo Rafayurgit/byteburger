@@ -33,3 +33,14 @@ router.get("/:id", async(req,res)=>{
         res.status(500),json({message: error.message})
     }
 })
+
+router.put("/:id", async(req,res)=>{
+    try {
+        const updateItem= await menuItem.findByIdAndUpdate(req.params.id, req.body, {new:true});
+        if(!updateItem) return res.status(404).json({message: "Item not found"})
+        res.json(updateItem);
+
+    } catch (error) {
+        res.status(500),json({message: error.message})
+    }
+})
