@@ -21,8 +21,8 @@ const menuItemSchema = mongoose.Schema({
         required:true,
         default:true
     }
-    
+
 });
 
-const menuItem = mongoose.model("menuItme", menuItemSchema);
-export default menuItem;
+const MenuItem = mongoose.model("menuItme", menuItemSchema);
+export default MenuItem;
