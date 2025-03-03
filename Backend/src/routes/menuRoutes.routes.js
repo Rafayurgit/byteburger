@@ -1,11 +1,11 @@
 import express, { json } from "express";
-import MenuItem from "../models/menuItem";
+import MenuItem from "../models/menuItems.js";
 
 const router = express.Router();
 
 router.get("/", async(req,res)=>{
     try {
-        const items= await MenuItem.find();
+        const items= await MenuItem.find(); 1
         res.json(items);
 
     } catch (error) {
