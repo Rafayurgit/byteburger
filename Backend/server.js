@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import burgerRoutes from "./src/routes/burgerRoutes.js"
 import menuRoutes from "./src/routes/menuRoutes.routes.js"
+import authRoutes from "./src/routes/auth.routes.js"
 
 dotenv.config();
 // connectDb();
@@ -14,6 +15,7 @@ app.use(cors());
 
 app.use("/api/burgers", burgerRoutes);
 app.use("/api/menuItem", menuRoutes );
+app.use("/api/auth", authRoutes);
 
 const PORT = 8080 || process.env.PORT;
 
