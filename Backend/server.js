@@ -1,5 +1,5 @@
 import express from "express";
-// import connectDb from "./src/config/db";
+import connectDb from "./src/config/db.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import burgerRoutes from "./src/routes/burgerRoutes.js"
@@ -7,7 +7,7 @@ import menuRoutes from "./src/routes/menuRoutes.routes.js"
 import authRoutes from "./src/routes/auth.routes.js"
 
 dotenv.config();
-// connectDb();
+connectDb();
 
 const app= express();
 app.use(express.json());
