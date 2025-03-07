@@ -7,11 +7,15 @@ const router= express.Router();
 
 router.post("/register" , async(req,res)=>{
     try {
-        const {name,email, password }= req.body;
+        const {name,email, password, role }= req.body;
         const existingUser= await User.findOne({email});
+
         if(existingUser) return res.status(400).json({message: "User already exist"});
+        const hashedPasword = await bcrypt.hash(password, 10);
         
-        const newUser= new User({name,email, password});
+        if(role=== "admin") return res.status(403).json({message:"you can't register as a admin directly"})
+
+        const newUser= new User({name,email, password: hashedPasword, role});
         await newUser.save();
 
         res.status(201).json({message:"New user registered successfully"})
