@@ -1,6 +1,6 @@
 import express, { json } from "express";
 import MenuItem from "../models/menuItems.js";
-import authMiddleware from "../middleware/auth.middleware.js";
+import {authMiddleware, adminMiddleware} from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
@@ -15,7 +15,7 @@ router.get("/", async(req,res)=>{
 })
 
 //create a new item 
-router.post("/",authMiddleware, async(req,res)=>{
+router.post("/", authMiddleware, adminMiddleware, async(req,res)=>{
     try {
         const newItem = MenuItem(req.body);
         await newItem.save();
@@ -35,7 +35,7 @@ router.get("/:id", async(req,res)=>{
     }
 })
 
-router.put("/:id",authMiddleware, async(req,res)=>{
+router.put("/:id", authMiddleware, adminMiddleware, async(req,res)=>{
     try {
         const updateItem= await MenuItem.findByIdAndUpdate(req.params.id, req.body, {new:true});
         if(!updateItem) return res.status(404).json({message: "Item not found"})
@@ -46,7 +46,7 @@ router.put("/:id",authMiddleware, async(req,res)=>{
     }
 })
 
-router.delete("/:id",authMiddleware, async(req,res)=>{
+router.delete("/:id", authMiddleware, adminMiddleware, async(req,res)=>{
     try {
         const deleteItem= await MenuItem.findByIdAndDelete( req.params.id);
         if(!deleteItem) return res.status(404).json({messag: "Item not found"})
