@@ -12,3 +12,16 @@ router.get("/", async(req, res)=>{
         res.status(500).json({message:error.message})
     }
 });
+
+router.post("/", async(req,res)=>{
+    try {
+        const {name, feedback, image}= req.body;
+        const newReview= new Review({name, feedback, image});
+        newReview.save();
+        res.status(201).json({newReview})
+
+
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+})
