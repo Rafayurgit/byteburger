@@ -37,16 +37,13 @@ export default function ReviewsPage() {
 
   const fetchReviews = async () => {
     try {
-      const { data } = await axios.get("/api/reviews");
-      if (Array.isArray(data)) {
-        setReviews((prev) => [...prev, ...data]);
-      } else {
-        console.error("Unexpected data format:", data);
-      }
+      const { data } = await axios.get("http://localhost:8080/api/reviews");
+      setReviews(data); // Directly set API data
     } catch (error) {
       console.error("Error fetching reviews:", error);
     }
   };
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
